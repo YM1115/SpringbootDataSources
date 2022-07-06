@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bzy.edu.master.MasterDao">
+
+    <resultMap id="ListData" type="com.bzy.edu.bean.masterbean">
+        <id property="userId" column="user_id"></id>
+        <result property="userName" column="user_name"/>
+        <result property="userPassword" column="user_password"/>
+        <result property="salt" column="salt"/>
+    </resultMap>
+
+    <select id="selectData" resultMap="ListData">
+        select * from tb_user
+    </select>
+
+</mapper>
